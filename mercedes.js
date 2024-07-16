@@ -15,7 +15,17 @@ function mostPopular(){
     fetch(url)
     .then(res => res.json())
     .then((data) =>{
+        const cars = document.querySelector(".cars")
+
+        cars.innerHTML = `
+        <img src="${mercedes.poster}" alt="${mercedes.name}"/>
+        <h3>Mercedes-Benz${mercedes.name}</h3>
+        <p> Price ${mercedes.price}</p>
+        <p> Horsepower${mercedes.horsepower}`
         
+        
+
+       
     })
 }
 
