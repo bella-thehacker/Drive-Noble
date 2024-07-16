@@ -10,7 +10,7 @@
       },
       {
         "id": "2",
-        "title": "AMG GT 63 S",
+        "name": "AMG GT 63 S",
         "price": "Ksh 16, 500, 000",
         "horsepower": "188-302 HP",
         "description": "The A-Class is a compact luxury hatchback or sedan that combines sportiness with advanced technology. It's perfect for city driving and offers a dynamic performance.",
@@ -26,7 +26,7 @@
       },
       {
         "id": "4",
-        "title": "E 350",
+        "name": "E 350",
         "price": "Ksh 12,500,000",
         "horsepower": "225 HP",
         "description": "The E 350 is a midsize luxury sedan that offers a perfect blend of elegance, comfort, and power. It comes with advanced safety features and a refined interior.",
@@ -43,7 +43,7 @@
       {
         "id": "6",
         "name": "S 580",
-        "price": "22,000,000",
+        "price": " Ksh 22,000,000",
         "horsepower": "495 HP",
         "description": " The S 580 is the flagship sedan of Mercedes-Benz, known for its opulent luxury, state-of-the-art technology, and exceptional performance. It is the ultimate symbol of automotive excellence.",
         "poster": "https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/mercedes-benz/s-class-wv223/exterior-highlights/mercedes-benz-s-class-wv223-exterior-vertical-gallery-01-1680x1260-08-2020.cbv20230517105504.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg"
@@ -51,15 +51,15 @@
       {
         "id": "7",
         "name": "G 550",
-        "price": "24,000,000",
+        "price": " Ksh 24,000,000",
         "horsepower": "416 HP",
         "description": "The G 550, often referred to as the G-Wagon, is a luxury SUV renowned for its rugged design and unparalleled off-road capabilities. It offers a powerful driving experience and a commanding presence on the road",
         "poster": "https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/g-class/g-class-special-models-extraordinary/star-pattern/11-2022/images/mercedes-benz-g-class-special-models-star-pattern-6x6-image-2560x1440-11-2022.cbv20230517110856.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg"
       },
       {
         "id": "8",
-        "title": "A 220",
-        "price": "6,000,000",
+        "name": "A 220",
+        "price": " Ksh 6,000,000",
         "horsepower": "188 HP",
         "description": "",
         "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRANruB6BoNUwzRJSMD6YXNlEWEos2gVRbqeA&s"
