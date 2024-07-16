@@ -4,7 +4,7 @@
 }
 
 body{
-    height: 250vh;
+    height: 300vh;
 }
 
 nav{
@@ -15,6 +15,7 @@ nav{
     position: fixed;
     width: 100%;
 }
+
 nav  #logo{
     height: 10vh;
     width: 5vw;
@@ -68,7 +69,7 @@ nav .head{
 .container h2{
     margin-top: 30%;
     position: absolute;
-    top: -15%;
+    top: -35%;
     left: 5%;
     color: #000;
     letter-spacing: 3px;
@@ -76,6 +77,20 @@ nav .head{
 
 
 }
+
+.summary{
+    display: flex;
+    justify-content: center;
+}
+
+.summary p{
+    width: 30vw;
+    height: 40vh;
+    margin-top: 5%;
+    margin-left: 5%;
+    letter-spacing: 3px;
+}
+
 
 .rest img{
     height: 40vh;
@@ -89,4 +104,13 @@ nav .head{
     margin-left: 5%;
     letter-spacing: 3px;
     font-size: 115%;
+}
+
+.body{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.body.later{
+    opacity: 1;
 }
