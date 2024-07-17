@@ -10,22 +10,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const hamburger = document.querySelector(".hamburger");
-const mobile = document.querySelector(".mobile-nav")
+const mobile = document.querySelector(".mobile-nav");
 
-hamburger.addEventListener('click', function () {
+hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("is-active");
-  mobile.classList.toggle("is-active")
-
+  mobile.classList.toggle("is-active");
 });
 
 // utility functions
-function createElement(element){
-    return document.createElement(element)
- }
+function createElement(element) {
+  return document.createElement(element);
+}
 
- function addText(element,  text){
-    (element.innerText = text)
- }
+function addText(element, text) {
+  element.innerText = text;
+}
 
 function bestSellers() {
   fetch(url)
@@ -33,15 +32,13 @@ function bestSellers() {
     .then((data) => {
       const cars = document.querySelector(".cars");
       cars.innerHTML = " ";
-    
-      
 
       console.log(data);
       data.forEach((mercedes) => {
         if (mercedes.id === "3") {
-            const div2 = document.createElement("div")
-            div2.className = "div2"
-            cars.appendChild(div2)
+          const div2 = document.createElement("div");
+          div2.className = "div2";
+          cars.appendChild(div2);
           const carImg = document.createElement("img");
           carImg.src = mercedes.poster;
           carImg.className = "carImg";
@@ -62,7 +59,7 @@ function bestSellers() {
           carDescription.innerHTML = mercedes.description;
           carDescription.className = "description";
 
-          cars.appendChild(div2)
+          cars.appendChild(div2);
 
           div2.appendChild(carImg);
           div2.appendChild(carName);
@@ -78,79 +75,106 @@ function bestSellers() {
 
 bestSellers();
 
-// function login(){
-//     const logButton = document.querySelector(".logButton")
-//     logButton.addEventListener("click", logPage)
-//  }
-
-//  function logPage(){
-//     const mobile = document.querySelector(".mobile-nav")
-//     console.log(mobile)
-//     if(mobile){
-//     mobile.innerHTML = " "
-//     }else{
-//         console.error("mobile not found")
-//     }
-//     const form = document.querySelector(".find")
-//     console.log(form)
-//     if(form){
-//     form.classList.add("login")
-//     }else{
-//         console.error("form element not found not found")
-//     }
-//  }
-// login()
-
 // utility functions
- function createElement(element){
-    return document.createElement(element)
- }
+function createElement(element) {
+  return document.createElement(element);
+}
 
- function addText(element,  text){
-    (element.innerText = text)
- }
- function login(){
-    const logButton = document.querySelector(".logButton")
-    logButton.addEventListener("click", logPage)
- }
+function addText(element, text) {
+  element.innerText = text;
+}
 
- function logPage(){
-    const mobile  = document.querySelector(".mobile-nav")
-    mobile.innerHTML =" "
+//function to add login form
 
-    const form = createElement("form")
-    form.className = "login"
+function login() {
+  const logButton = document.querySelector(".logButton");
+  logButton.addEventListener("click", logPage);
+}
 
-    const heading = createElement("h3")
-    addText(heading, "Login!")
+function logPage() {
+  const mobile = document.querySelector(".mobile-nav");
+  console.log(mobile);
+  if (mobile) {
+    mobile.innerHTML = " ";
 
-    const username = createElement("input")
-    username.type = "text"
-    username.className = "loginButton"
-    username.placeholder = "Username"
+    const form = createElement("form");
+    form.className = "login";
 
-    const userIcon = createElement("i")
-    userIcon.className = "fa fa-user"
-    userIcon.setAttribute("aria-hidden", "true")
+    const heading = createElement("h3");
+    addText(heading, "Login!");
 
-    const password = createElement("input")
-    password.className = "password"
-    password.type = "password"
-    password.placeholder = "Enter password"
+    const username = createElement("input");
+    username.type = "text";
+    username.className = "loginButton";
+    username.placeholder = "Username";
 
-    const lock = createElement("i")
-    lock.className = "fa fa-lock"
-    lock.setAttribute("aria-hidden", "true")
+    const userIcon = createElement("i");
+    userIcon.className = "fa fa-user";
+    userIcon.setAttribute("aria-hidden", "true");
 
-    form.appendChild(heading)
-    form.appendChild(username)
-    form,appendChild(userIcon)
-    form.appendChild(password)
-    form.appendChild(lock)
+    const password = createElement("input");
+    password.className = "password";
+    password.type = "password";
+    password.placeholder = "Enter password";
 
-    mobile.appendChild(form)
- }
+    const lock = createElement("i");
+    lock.className = "fa fa-lock";
+    lock.setAttribute("aria-hidden", "true");
 
- login()
+    const submit = createElement("button");
+    submit.className = "submitForm";
+    submit.type = "submit";
+    addText(submit, "Mercedes Me!");
 
+    const close = createElement("button");
+    close.className = "closeForm";
+    close.type = "reset";
+    addText(close, "close");
 
+    form.appendChild(heading);
+    form.appendChild(username);
+    form.appendChild(userIcon);
+    form.appendChild(password);
+    form.appendChild(lock);
+    form.appendChild(submit);
+    form.appendChild(close);
+
+    mobile.appendChild(form);
+  } else {
+    console.error("mobile not found");
+  }
+}
+
+login();
+
+function submitButton(e) {
+    const submitButton = querySelector(".submitButton")
+  e.preventDefault();
+
+  const password = document.querySelector(".password").value;
+
+  if (password === "mercedes") {
+    loggedIn();
+  } else if (password !== "mercedes") {
+    alert("invalid input. password is 'mercedes' ");
+  } else {
+    alert("please input password: 'mercedes' ");
+  }
+}
+submitButton()
+
+function loggedIn() {
+  const loadingScreen = createElement("img");
+  loadingScreen.src =
+    "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczQydm5iZ3JmenlkYTV1ZWV1bHJnZWcwazVqNXBwM293amMyN2gwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MoIYVtBcvGlYye8O9D/giphy.webp";
+  loadingScreen.className = "loadingScreen";
+  document.body.appendChild(loadingScreen);
+
+  setTimeout(() => {
+    document.body.removeChild(loadingScreen);
+    alert("You are now logged in!");
+  }, 3000);
+}
+
+const submitForm = document.querySelector(".submitForm");
+submitForm.addEventListener("click", submitButton);

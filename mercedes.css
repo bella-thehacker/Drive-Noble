@@ -160,7 +160,24 @@ form h3{
     margin-left: 15%;
  }
 
-  
+ .submitForm{
+    height: 3rem;
+    width: 4rem;
+    color: #000;
+    background-color: #fff;
+    
+ }
+ .closeForm{
+    height: 3rem;
+    width: 4rem;
+    color: #000;
+    background-color: #fff;
+    
+ }
+.loadingScreen{
+    height: 100%;
+    width: 100%;
+}
 
 .head.show{
     opacity: 1;
@@ -266,6 +283,7 @@ h1{
   height: 50rem;
   
 }
+
 .div2:hover{
     cursor: pointer;
     background-color: #000;
@@ -276,6 +294,7 @@ h1{
         color: #fff;
     }
 }
+
 .div2 img{
     height:30rem;
     width: 33rem;
@@ -297,19 +316,6 @@ text-align: center;
     width: 15vw;
 }
 
-.popCar {
-
-}
-.searchInput{
-    color: #fff;
-    width: 30vw;
-    height: 7vh;
-   margin-left: 40%;
-  
-}
 
 
-.loginPage{
-    margin-left: 40%;
-}
 
