@@ -1,5 +1,3 @@
-
-
 const url = "http://localhost:3000/mercedes";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11,49 +9,86 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 3000);
 });
 
-// function fetchData() {
-//   fetch(url)
-//     .then((res) => {
-//       if (!res.ok) {
-//         throw Error("error");
-//       }
-//       return res.json();
-//     })
-//     .then(mostPopular)
-//     .catch((error) => {
-//       console.error("error fetching data", error);
-//     });
-// }
+const hamburger = document.querySelector(".hamburger");
+const mobile = document.querySelector(".mobile-nav")
 
-// function createAnElement(element) {
-//   return document.createElement(element);
-// }
+hamburger.addEventListener('click', function () {
+  hamburger.classList.toggle("is-active");
+  mobile.classList.toggle("is-active")
 
-// function addText(element, text) {
-//   element.innerText = text;
-// }
+});
 
-// function listen(element, event, callback) {
-//   return element.addEventListener(event, callback);
-// }
+function bestSellers() {
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      const cars = document.querySelector(".cars");
+      cars.innerHTML = " ";
 
-// const mostPopular = (mercedes.data) => {
-//   const cars = document.querySelector(".cars");
-//   cars.innerHTML = ""
-//   const popular = createAnElement("div");
-//   popular.className = "popular";
-//   cars.appendChild(popular);
-  
+      console.log(data);
+      data.forEach((mercedes) => {
+        if (mercedes.id === "3") {
+          const carImg = document.createElement("img");
+          carImg.src = mercedes.poster;
+          carImg.className = "carImg";
+
+          const carName = document.createElement("h3");
+          carName.innerHTML = mercedes.name;
+          carName.className = "carName";
+
+          const carPrice = document.createElement("p");
+          carPrice.innerHTML = mercedes.price;
+          carPrice.className = "carPrice";
+
+          const carHorsepower = document.createElement("p");
+          carHorsepower.innerHTML = mercedes.horsepower;
+          carHorsepower.className = "horsepower";
+
+          const carDescription = document.createElement("p");
+          carDescription.innerHTML = mercedes.description;
+          carDescription.className = "description";
+
+          cars.appendChild(carImg);
+          cars.appendChild(carName);
+          cars.appendChild(carPrice);
+          cars.appendChild(carHorsepower);
+          cars.appendChild(carDescription);
+        }
+        console.log;
+      });
+    })
+    .catch((error) => console.error("error fetching data", error));
+}
+
+bestSellers();
+
+// utility functions
+ function createElement(element){
+    return document.createElement(element)
+ }
+
+ function addText(element,  text){
+    (element.innerText = text)
+ }
+ 
+
+ // function for the search bar
+
+ function searchBar(){
+   const searchButton = document.querySelector("searchButton")
+    searchButton.addEventListener("click" , searchBarContent)
+ }
+
+ function searchBarContent(){
+    const mobile = document.querySelector("mobile-nav")
+    mobile.innerHTML = ''
+   const searchInput = createElement("input")
+   searchInput.className = "searchInput"
 
 
-//   mercedes.data.map((mercedes) => {
-//     const carImg = createAnElement("img");
-//     carImg.className = "carImg";
-//     poster.src = mercedes.poster;
-//     popular.appendChild(carImg);
-  
-//   });
+   mobile.appendChild(searchInput)
+   
 
-  
-// }
+ }
 
+ searchBar()
