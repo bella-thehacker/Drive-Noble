@@ -127,7 +127,40 @@ nav .head{
     background-color: aqua;
 }
 
+ form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+    width: 40rem;
+    height: 30rem;
+    background-color: #000;
+   
+    
+}
 
+
+
+
+form input{
+    height: 3rem;
+    width: 30rem;
+    padding: 0;
+    margin: 1rem;
+    margin-left: 15%;
+
+}
+form h3{
+    color: #fff;
+    font-size: 200%;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+ form i{
+    color: #fff;
+    margin-left: 15%;
+ }
+
+  
 
 .head.show{
     opacity: 1;
@@ -280,6 +313,3 @@ text-align: center;
     margin-left: 40%;
 }
 
-.password{
-    margin-left: 40%;
-}

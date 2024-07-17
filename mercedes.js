@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("nav").classList.add("later");
     document.querySelector(".body").classList.add("later");
     document.querySelector(".head").classList.add("show");
-  }, 3000);
+  }, 2000);
 });
 
 const hamburger = document.querySelector(".hamburger");
@@ -78,6 +78,29 @@ function bestSellers() {
 
 bestSellers();
 
+// function login(){
+//     const logButton = document.querySelector(".logButton")
+//     logButton.addEventListener("click", logPage)
+//  }
+
+//  function logPage(){
+//     const mobile = document.querySelector(".mobile-nav")
+//     console.log(mobile)
+//     if(mobile){
+//     mobile.innerHTML = " "
+//     }else{
+//         console.error("mobile not found")
+//     }
+//     const form = document.querySelector(".find")
+//     console.log(form)
+//     if(form){
+//     form.classList.add("login")
+//     }else{
+//         console.error("form element not found not found")
+//     }
+//  }
+// login()
+
 // utility functions
  function createElement(element){
     return document.createElement(element)
@@ -86,69 +109,48 @@ bestSellers();
  function addText(element,  text){
     (element.innerText = text)
  }
-
-//  //pop ups for best selling cars
-//  const popup = document.querySelector("div2")
-//  popup.addEventListener("click", pop)
-
-//  function pop(){
-
-//  }
-
- // function for the search bar
-
- function searchBar(){
-   const searchButton = document.querySelector(".searchButton")
-    searchButton.addEventListener("click" , searchBarContent)
+ function login(){
+    const logButton = document.querySelector(".logButton")
+    logButton.addEventListener("click", logPage)
  }
 
- function searchBarContent(){
-    const mobile = document.querySelector(".mobile-nav")
-    mobile.innerHTML = ''
+ function logPage(){
+    const mobile  = document.querySelector(".mobile-nav")
+    mobile.innerHTML =" "
 
-    const searchInput = createElement("input")
-    searchInput.className = "searchInput"
-    searchInput.placeholder = "Search"
+    const form = createElement("form")
+    form.className = "login"
 
-    mobile.appendChild(searchInput)
+    const heading = createElement("h3")
+    addText(heading, "Login!")
+
+    const username = createElement("input")
+    username.type = "text"
+    username.className = "loginButton"
+    username.placeholder = "Username"
+
+    const userIcon = createElement("i")
+    userIcon.className = "fa fa-user"
+    userIcon.setAttribute("aria-hidden", "true")
+
+    const password = createElement("input")
+    password.className = "password"
+    password.type = "password"
+    password.placeholder = "Enter password"
+
+    const lock = createElement("i")
+    lock.className = "fa fa-lock"
+    lock.setAttribute("aria-hidden", "true")
+
+    form.appendChild(heading)
+    form.appendChild(username)
+    form,appendChild(userIcon)
+    form.appendChild(password)
+    form.appendChild(lock)
+
+    mobile.appendChild(form)
  }
 
- searchBar()
+ login()
 
- function searchCars(){
-    fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-        const searchInput = document.querySelector(".searchInput")
-        searchInput.addEventListener("submit", (e) =>{
-            e.preventDefault()
-            const value = e.target.searchInput.value
-            console.log(value)
-        })
-        
 
-    })
-}
-
-searchCars()
-
-//  function login(){
-//     const logButton = document.querySelector(".logButton")
-//     logButton.addEventListener("click", logPage)
-//  }
-
-//  function logPage(){
-//     const mobile = document.querySelector('.mobile-nav')
-//     mobile.innerHTML = " "
-    
-//    const loginTemplate = createElement("form")
-//    loginTemplate.innerHTML`
-//    <h2> Log In</h2>
-//    <input> "placeholder= Username" </input>
-//    <input> "placeholder= password" </input>
-//    <button> Login </button>
-//    `
-//    mobile.appendChild(loginTemplate)
-//  }
-
-//  login()
