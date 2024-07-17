@@ -4,7 +4,7 @@
 }
 
 body{
-    height: 300vh;
+    height: 250vh;
 }
 
 nav{
@@ -85,6 +85,7 @@ nav .head{
     min-height: 100vh;
     z-index: 98;
     background-color: transparent;
+    border:  2px solid rgba(255, 2555, 255, .2) ;
     padding-top: 120px;
     transition: 0.4s;
 }
@@ -215,16 +216,70 @@ height: 30vh;
 margin-top: 100%;
 
 }
+h1{
+    text-align: center;
+}
 .cars{
-    display: flex;
-    justify-content: center;
+ display: flex;
+ justify-content: center;
+ gap: 1rem;
+ flex-wrap: wrap;
+   
     
 }
-.cars img{
-    height:20vh;
+.div2{
+  padding: 1rem;
+  width: 35rem;
+  height: 50rem;
+  
+}
+.div2:hover{
+    cursor: pointer;
+    background-color: #000;
+    p{
+        color: #fff;
+    }
+    h3{
+        color: #fff;
+    }
+}
+.div2 img{
+    height:30rem;
+    width: 33rem;
+    padding: 4%;
+    
+}
+.div2 h3{
+    text-align: center;
+    font-size: 200%;
+
+}
+.div2 p{
+text-align: center;
+    width: 25rem;
+    margin-left: 25%;
+    margin-top: 2%;
+}
+.cars p{
     width: 15vw;
 }
 
-.cars p{
-    width: 15vw;
+.popCar {
+
+}
+.searchInput{
+    color: #fff;
+    width: 30vw;
+    height: 7vh;
+   margin-left: 40%;
+  
+}
+
+
+.loginPage{
+    margin-left: 40%;
+}
+
+.password{
+    margin-left: 40%;
 }

@@ -18,16 +18,30 @@ hamburger.addEventListener('click', function () {
 
 });
 
+// utility functions
+function createElement(element){
+    return document.createElement(element)
+ }
+
+ function addText(element,  text){
+    (element.innerText = text)
+ }
+
 function bestSellers() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
       const cars = document.querySelector(".cars");
       cars.innerHTML = " ";
+    
+      
 
       console.log(data);
       data.forEach((mercedes) => {
         if (mercedes.id === "3") {
+            const div2 = document.createElement("div")
+            div2.className = "div2"
+            cars.appendChild(div2)
           const carImg = document.createElement("img");
           carImg.src = mercedes.poster;
           carImg.className = "carImg";
@@ -48,11 +62,13 @@ function bestSellers() {
           carDescription.innerHTML = mercedes.description;
           carDescription.className = "description";
 
-          cars.appendChild(carImg);
-          cars.appendChild(carName);
-          cars.appendChild(carPrice);
-          cars.appendChild(carHorsepower);
-          cars.appendChild(carDescription);
+          cars.appendChild(div2)
+
+          div2.appendChild(carImg);
+          div2.appendChild(carName);
+          div2.appendChild(carPrice);
+          div2.appendChild(carHorsepower);
+          div2.appendChild(carDescription);
         }
         console.log;
       });
@@ -70,25 +86,69 @@ bestSellers();
  function addText(element,  text){
     (element.innerText = text)
  }
- 
+
+//  //pop ups for best selling cars
+//  const popup = document.querySelector("div2")
+//  popup.addEventListener("click", pop)
+
+//  function pop(){
+
+//  }
 
  // function for the search bar
 
  function searchBar(){
-   const searchButton = document.querySelector("searchButton")
+   const searchButton = document.querySelector(".searchButton")
     searchButton.addEventListener("click" , searchBarContent)
  }
 
  function searchBarContent(){
-    const mobile = document.querySelector("mobile-nav")
+    const mobile = document.querySelector(".mobile-nav")
     mobile.innerHTML = ''
-   const searchInput = createElement("input")
-   searchInput.className = "searchInput"
 
+    const searchInput = createElement("input")
+    searchInput.className = "searchInput"
+    searchInput.placeholder = "Search"
 
-   mobile.appendChild(searchInput)
-   
-
+    mobile.appendChild(searchInput)
  }
 
  searchBar()
+
+ function searchCars(){
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        const searchInput = document.querySelector(".searchInput")
+        searchInput.addEventListener("submit", (e) =>{
+            e.preventDefault()
+            const value = e.target.searchInput.value
+            console.log(value)
+        })
+        
+
+    })
+}
+
+searchCars()
+
+//  function login(){
+//     const logButton = document.querySelector(".logButton")
+//     logButton.addEventListener("click", logPage)
+//  }
+
+//  function logPage(){
+//     const mobile = document.querySelector('.mobile-nav')
+//     mobile.innerHTML = " "
+    
+//    const loginTemplate = createElement("form")
+//    loginTemplate.innerHTML`
+//    <h2> Log In</h2>
+//    <input> "placeholder= Username" </input>
+//    <input> "placeholder= password" </input>
+//    <button> Login </button>
+//    `
+//    mobile.appendChild(loginTemplate)
+//  }
+
+//  login()
