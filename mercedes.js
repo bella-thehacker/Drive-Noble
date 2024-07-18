@@ -169,7 +169,8 @@ bestSellers();
     const password = document.querySelector(".password").value
 
     if(password === "mercedes"){
-      alert("You have been logged in!")
+     alert("You are Logged in!")
+
     }else if (password !== "mercedes"){
         alert( "invalid input password is 'mercedes' ")
  }
