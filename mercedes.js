@@ -1,5 +1,6 @@
 
 
+
 const url = "http://localhost:3000/mercedes";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -136,7 +137,7 @@ bestSellers();
     const close = createElement("button")
     close.className = "closeForm"
     close.type = "reset"
-    addText(close, "close")
+    addText(close, "reset")
 
     form.appendChild(heading)
     form.appendChild(username)
@@ -186,7 +187,11 @@ bestSellers();
 
 function searchBar(){
    const searchButton =  document.querySelector(".searchButton")
-   searchButton.addEventListener("click", searchContent)
+   searchButton.addEventListener("click", () =>{
+      searchContent()
+      getCars()
+      
+   })
 
 
 }
@@ -201,52 +206,42 @@ function searchContent(){
     filter.placeholder = "search cars here"
 
     removeMobile.appendChild(filter)
+
 }
 
 searchBar()
 
-let arrayCars = []
-
- const filterItems = document.querySelector(".mobile-nav")
-const carList = createElement("ul")
-carList.className = "carList"
-document.querySelector(".body").appendChild(carList)
-   
-
-function fetchCars(){
+function getCars(){
     fetch(url)
     .then((res) => res.json())
-    .then((data) => {
-        arrayCars = data
-        displayCars(arrayCars)
+    .then((data) =>{
+      
+      filterBySearch(data)
+      
 
     })
-    .catch((error) => console.error("Error fetching data"))
 }
-
-const displayCars = ( mercedes) =>{
-    const allCars = mercedes.map((mercedes) => {
-    
-        return `
-        <li class="carlist">
-        <h2> ${mercedes.name}</h2>
-        </li>`
-    
-     }) .join('')
-        carList.innerHTML = allCars
-    
-
-}
- 
-filterItems.addEventListener("keyup" , (e) => {
-    const searchSth = e.target.value.toLowerCase()
-    const filterCars = arrayCars.filter((mercedes) => {
-        return mercedes.name.toLowerCase.includes(searchSth)
-    })
-    displayCars(filterCars)
-})
-fetchCars()
-
- 
+function filterBySearch(data){
+   const mobile = document.querySelector(".mobile-nav")
+   const input = document.querySelector(".filterCars")
   
+   input.addEventListener("input", (e) =>{
+     
+      const filteredCars = data.filter(car => (car.name?.includes(e.target.value)))
+   
+      filteredCars.forEach(car => renderCar(car))
+      
+   })
+}
+
+function renderCar(car) {
+   const mobile = document.querySelector(".mobile-nav")
+   const searchDiv = createElement("div")
+   mobile.appendChild(searchDiv)
+
+   const carSearch = createElement("h1")
+   carSearch.className = "carSearch"
+   
+   searchDiv.appendChild(carSearch)
+}
 
