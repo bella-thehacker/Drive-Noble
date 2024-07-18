@@ -1,3 +1,5 @@
+
+
 const url = "http://localhost:3000/mercedes";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -36,7 +38,7 @@ function bestSellers() {
     
       
 
-      console.log(data);
+      
       data.forEach((mercedes) => {
         if (mercedes.id === "3") {
             const div2 = document.createElement("div")
@@ -70,7 +72,7 @@ function bestSellers() {
           div2.appendChild(carHorsepower);
           div2.appendChild(carDescription);
         }
-        console.log;
+        
       });
     })
     .catch((error) => console.error("error fetching data", error));
@@ -165,37 +167,86 @@ bestSellers();
     const password = document.querySelector(".password").value
 
     if(password === "mercedes"){
-    loggedIn()
+        const loadingScreen = createElement("img")
+        loadingScreen.src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczQydm5iZ3JmenlkYTV1ZWV1bHJnZWcwazVqNXBwM293amMyN2gwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MoIYVtBcvGlYye8O9D/giphy.webp"
+        loadingScreen.className = "loadingScreen"
+        document.body.appendChild(loadingScreen)
+    
+        setTimeout(() => {
+            document.body.removeChild(loadingScreen)
+            alert('You are now logged in!')
+        }, 3000)
+
+
     }else if (password !== "mercedes"){
         alert( "invalid input password is 'mercedes' ")
- }else{
-    alert ( "please input password: 'mercedes' ")
  }
  
 })
 
- function loggedIn(){
+function searchBar(){
+   const searchButton =  document.querySelector(".searchButton")
+   searchButton.addEventListener("click", searchContent)
+
+
+}
+
+function searchContent(){
+    const removeMobile = document.querySelector(".mobile-nav")
+    removeMobile.innerHTML = " "
+
+    const filter = createElement("input")
+    filter.className = "filterCars"
+    filter.type = "search"
+    filter.placeholder = "search cars here"
+
+    removeMobile.appendChild(filter)
+}
+
+searchBar()
+
+let arrayCars = []
+
+ const filterItems = document.querySelector(".mobile-nav")
+const carList = createElement("ul")
+carList.className = "carList"
+document.querySelector(".body").appendChild(carList)
+   
+
+function fetchCars(){
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        arrayCars = data
+        displayCars(arrayCars)
+
+    })
+    .catch((error) => console.error("Error fetching data"))
+}
+
+const displayCars = ( mercedes) =>{
+    const allCars = mercedes.map((mercedes) => {
+    
+        return `
+        <li class="carlist">
+        <h2> ${mercedes.name}</h2>
+        </li>`
+    
+     }) .join('')
+        carList.innerHTML = allCars
     
 
-    const loadingScreen = createElement("img")
-    loadingScreen.src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczQydm5iZ3JmenlkYTV1ZWV1bHJnZWcwazVqNXBwM293amMyN2gwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MoIYVtBcvGlYye8O9D/giphy.webp"
-    loadingScreen.className = "loadingScreen"
-    document.body.appendChild(loadingScreen)
-
-    setTimeout(() => {
-        document.body.removeChild(loadingScreen)
-        alert('You are now logged in!')
-    }, 3000)
- }
+}
+ 
+filterItems.addEventListener("keyup" , (e) => {
+    const searchSth = e.target.value.toLowerCase()
+    const filterCars = arrayCars.filter((mercedes) => {
+        return mercedes.name.toLowerCase.includes(searchSth)
+    })
+    displayCars(filterCars)
+})
+fetchCars()
 
  
-
-
- 
-//    document.querySelector(".closeForm").addEventListener("reset", (e) => {
-//     const mobile = document.querySelector(".mobile-nav")
-//     mobile.innerHTML = ''
-
-//    })
-
+  
 
