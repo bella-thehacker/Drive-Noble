@@ -45,6 +45,7 @@ function bestSellers() {
             const div2 = document.createElement("div")
             div2.className = "div2"
             cars.appendChild(div2)
+
           const carImg = document.createElement("img");
           carImg.src = mercedes.poster;
           carImg.className = "carImg";
@@ -168,17 +169,7 @@ bestSellers();
     const password = document.querySelector(".password").value
 
     if(password === "mercedes"){
-        const loadingScreen = createElement("img")
-        loadingScreen.src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczQydm5iZ3JmenlkYTV1ZWV1bHJnZWcwazVqNXBwM293amMyN2gwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MoIYVtBcvGlYye8O9D/giphy.webp"
-        loadingScreen.className = "loadingScreen"
-        document.body.appendChild(loadingScreen)
-    
-        setTimeout(() => {
-            document.body.removeChild(loadingScreen)
-            alert('You are now logged in!')
-        }, 3000)
-
-
+      alert("You have been logged in!")
     }else if (password !== "mercedes"){
         alert( "invalid input password is 'mercedes' ")
  }
@@ -222,12 +213,12 @@ function getCars(){
     })
 }
 function filterBySearch(data){
-   const mobile = document.querySelector(".mobile-nav")
+   
    const input = document.querySelector(".filterCars")
   
    input.addEventListener("input", (e) =>{
      
-      const filteredCars = data.filter(car => (car.name?.includes(e.target.value)))
+      const filteredCars = data.filter(car => (car.name?.includes(e.target.value.toLowerCase())))
    
       filteredCars.forEach(car => renderCar(car))
       
@@ -237,11 +228,56 @@ function filterBySearch(data){
 function renderCar(car) {
    const mobile = document.querySelector(".mobile-nav")
    const searchDiv = createElement("div")
+   searchDiv.className = "searchDiv"
    mobile.appendChild(searchDiv)
 
-   const carSearch = createElement("h1")
+   const carSearch = createElement("h3")
    carSearch.className = "carSearch"
-   
+   carSearch.innerHTML = car.name
    searchDiv.appendChild(carSearch)
+
+   carSearch.addEventListener("click" , displayCars)
+
 }
 
+function displayCars(){
+   fetch(url)
+   .then((res) => res.json())
+   .then((data) =>{
+   const body = document.querySelector('body')
+   body.innerHTML = " "
+
+      data.forEach((mercedes) =>{
+
+   const displayDiv = createElement("div")
+   displayDiv.className = "displayDiv"
+   document.body.appendChild(displayDiv)
+
+   const displayImage = createElement("img")
+   displayImage.src = mercedes.poster
+
+   const displayName = createElement("h3")
+   displayName.className = "displayName"
+   displayName.innerHTML = mercedes.name
+
+   const displayPrice = createElement("p")
+   displayPrice.className = "displayPrice"
+   displayPrice.innerHTML = mercedes.price
+
+   const displayHorsepower = createElement("p")
+   displayHorsepower.className = "displayHorsepower"
+   displayHorsepower.innerHTML = mercedes.horsepower
+
+   const displayDescription = createElement("p")
+   displayDescription.className = "displayHorsepower"
+   displayDescription.innerHTML = mercedes.description
+
+   displayDiv.appendChild(displayImage)
+   displayDiv.appendChild(displayName)
+   displayDiv.appendChild(displayPrice)
+   displayDiv.appendChild(displayHorsepower)
+   displayDiv.appendChild(displayDescription)
+      })
+   })
+   
+}
