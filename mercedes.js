@@ -21,14 +21,6 @@ hamburger.addEventListener('click', function () {
 
 });
 
-// utility functions
-function createElement(element){
-    return document.createElement(element)
- }
-
- function addText(element,  text){
-    (element.innerText = text)
- }
 
 function bestSellers() {
   fetch(url)
@@ -41,7 +33,7 @@ function bestSellers() {
 
       
       data.forEach((mercedes) => {
-        if (mercedes.id === "3") {
+        if (mercedes.id === "popular") {
             const div2 = document.createElement("div")
             div2.className = "div2"
             cars.appendChild(div2)
