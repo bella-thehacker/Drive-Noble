@@ -212,9 +212,13 @@ function displayCars() {
       body.innerHTML = " ";
 
       data.forEach((mercedes) => {
+        const displayContainer = createElement("div")
+        displayContainer.className = "displayContainer"
+        document.body.appendChild(displayContainer)
+
         const displayDiv = createElement("div");
         displayDiv.className = "displayDiv";
-        document.body.appendChild(displayDiv);
+        displayContainer.appendChild(displayDiv);
 
         const displayImage = createElement("img");
         displayImage.src = mercedes.poster;
