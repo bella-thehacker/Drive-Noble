@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/mercedes";
+const url = "https://project-phase-1-theta.vercel.app/mercedes";
 
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
