@@ -164,7 +164,10 @@ function searchContent() {
   const filter = createElement("input");
   filter.className = "filterCars";
   filter.type = "search";
-  filter.placeholder = "search cars here";
+  filter.placeholder = "Search cars here";
+
+ 
+    
 
   removeMobile.appendChild(filter);
 }
