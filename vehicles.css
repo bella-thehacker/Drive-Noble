@@ -1,0 +1,369 @@
+/* === VEHICLES PAGE STYLING (Drive Noble Theme) === */
+
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.animated-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  background: radial-gradient(circle, #1e1e1e, #0d0d0d);
+  overflow: hidden;
+}
+
+.floating-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 { width: 80px; height: 80px; background: #ffffff33; top: 10%; left: 20%; }
+.shape-2 { width: 100px; height: 100px; background: #ffffff33; top: 60%; left: 10%; }
+.shape-3 { width: 120px; height: 120px; background: #ffffff33; top: 30%; left: 70%; }
+.shape-4 { width: 70px; height: 70px; background: #ffffff33; top: 80%; left: 50%; }
+.shape-5 { width: 90px; height: 90px; background: #ffffff33; top: 40%; left: 80%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+.glass-header {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+}
+
+.glass-header nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.wrapper a {
+  text-decoration: none;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.head h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.head h3 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+#logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: none;
+  padding: 0.6rem 1rem;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.glass-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-features {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.vehicles-hero{
+  margin-left: 15%;
+}
+
+.hero-features .feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #c9aa7c;
+}
+
+.category-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background: rgba(255,255,255,0.25);
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.vehicle-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 1rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+  color: white;
+}
+
+.vehicle-card:hover {
+  transform: scale(1.03);
+}
+
+.vehicle-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.vehicle-info h3 {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.vehicle-price {
+  color: #ccc;
+  margin: 0.2rem 0 0.5rem;
+}
+
+.vehicle-specs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.vehicle-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+}
+
+.action-btn.primary {
+  background-color: #007bff66;
+}
+
+.action-btn.secondary {
+  background-color: #28a74566;
+}
+
+.action-btn:hover {
+  opacity: 0.85;
+}
+
+.vehicle-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 95%;
+  max-width: 900px;
+  position: relative;
+  padding: 2rem;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  color: white;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-body .modal-section {
+  margin-bottom: 1.5rem;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feature-tag {
+  background: #ffffff22;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.spec-item {
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.modal-btn {
+  background: rgba(255,255,255,0.1);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+}
+
+.modal-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.modal-btn.primary {
+  background-color: #007bff33;
+}
+.modal-btn.secondary {
+  background-color: #28a74533;
+}
+.modal-btn.tertiary {
+  background-color: #ffc10733;
+}
+
+.cta-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cta-btn {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255,255,255,0.1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-btn:hover {
+  background-color: rgba(255,255,255,0.3);
+}

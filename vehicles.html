@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vehicles - Drive Noble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./vehicles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <nav>
+            <div class="head">
+                <h1>Drive Noble</h1>
+                <h3>Our Vehicle Collection</h3>
+            </div>
+            <img id="logo" 
+                 src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTRlcmhndDZwMzE5azJkemhnaGVhdjJsZ2Rja2s4dXpqb3RhNWVwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dxgRwc9KNMxIXBwfjd/giphy.webp"
+                 alt="Mercedes-Benz Logo">
+            <div class="wrapper">
+                <a href="index.html" class="back-home glass-btn">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="body">
+        <!-- Vehicles Hero -->
+        <section class="vehicles-hero">
+            <div class="her0-content">
+                <h1>Luxury Redefined</h1>
+                <p>Discover the complete Mercedes-Benz experience</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-award"></i>
+                        <span>Premium Quality</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Warranty Included</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tools"></i>
+                        <span>Expert Service</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Navigation -->
+        <section class="category-section">
+            <div class="category-container glass-panel">
+                <h3><i class="fas fa-filter"></i> Browse by Category</h3>
+                <div class="category-nav">
+                    <button class="category-btn active" onclick="filterCategory('all')" data-category="all">
+                        <i class="fas fa-car"></i>
+                        <span>All Vehicles</span>
+                    </button>
+                    <button class="category-btn" onclick="filterCategory('sedan')" data-category="sedan">
+                        <i class="fas fa-car-side"></i>
+                        <span>Sedans</span>
+                    </button>
+                    <button class="category-btn" onclick="filterCategory('suv')" data-category="suv">
+                        <i class="fas fa-truck"></i>
+                        <span>SUVs</span>
+                    </button>
+                    <button class="category-btn" onclick="filterCategory('amg')" data-category="amg">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>AMG Performance</span>
+                    </button>
+                    <button class="category-btn" onclick="filterCategory('hybrid')" data-category="hybrid">
+                        <i class="fas fa-leaf"></i>
+                        <span>Hybrid</span>
+                    </button>
+                    <button class="category-btn" onclick="filterCategory('brabus')" data-category="brabus">
+                        <i class="fas fa-crown"></i>
+                        <span>Brabus</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicles Grid -->
+        <section class="vehicles-section">
+            <div class="vehicles-header glass-panel">
+                <div class="header-info">
+                    <h2 id="vehicleCount">Loading vehicles...</h2>
+                    <p>Premium Mercedes-Benz collection</p>
+                </div>
+                <div class="header-controls">
+                    <div class="sort-dropdown">
+                        <select id="sortVehicles" class="glass-input">
+                            <option value="name">Sort by Name</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="power">Power</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                    <button class="refresh-btn glass-btn" onclick="refreshVehicles()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="vehicles-container">
+                <div class="vehicles-grid" id="vehiclesGrid">
+                    <!-- Vehicles will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="cta-content glass-panel">
+                <div class="cta-text">
+                    <h2>Ready to Experience Luxury?</h2>
+                    <p>Schedule a test drive or visit our showroom today</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-btn primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Schedule Test Drive
+                    </a>
+                    <a href="contact.html" class="cta-btn secondary">
+                        <i class="fas fa-phone"></i>
+                        Call Us Now
+                    </a>
+                    <a href="search.html" class="cta-btn tertiary">
+                        <i class="fas fa-search"></i>
+                        Advanced Search
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Vehicle Modal -->
+    <div class="vehicle-modal" id="vehicleModal" style="display: none;">
+        <div class="modal-content glass-panel">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./vehicles.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Vehicles - Drive Noble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./search.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <nav>
+            <div class="head">
+                <h1>Drive Noble</h1>
+                <h3>Find Your Mercedes</h3>
+            </div>
+            <img id="logo" 
+                 src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTRlcmhndDZwMzE5azJkemhnaGVhdjJsZ2Rja2s4dXpqb3RhNWVwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dxgRwc9KNMxIXBwfjd/giphy.webp"
+                 alt="Mercedes-Benz Logo">
+            <div class="wrapper">
+                <a href="index.html" class="back-home glass-btn">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="body">
+        <!-- Search Hero -->
+        <section class="search-hero">
+            <div class="hero-content glass-panel">
+                <h1>Find Your Perfect Mercedes</h1>
+                <p>Discover luxury, performance, and innovation in every model</p>
+                <div class="quick-search">
+                    <div class="search-input-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="quickSearch" placeholder="Search by model, price, or features...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Filters -->
+        <section class="search-filters-section">
+            <div class="filters-container glass-panel">
+                <h3><i class="fas fa-filter"></i> Advanced Filters</h3>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label><i class="fas fa-car"></i> Category</label>
+                        <select id="categoryFilter" class="glass-input">
+                            <option value="">All Categories</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="coupe">Coupe</option>
+                            <option value="amg">AMG Performance</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="brabus">Brabus</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label><i class="fas fa-dollar-sign"></i> Price Range</label>
+                        <select id="priceFilter" class="glass-input">
+                            <option value="">All Prices</option>
+                            <option value="0-5000000">Under KSh 5M</option>
+                            <option value="5000000-10000000">KSh 5M - 10M</option>
+                            <option value="10000000-20000000">KSh 10M - 20M</option>
+                            <option value="20000000-50000000">KSh 20M - 50M</option>
+                            <option value="50000000-999999999">Above KSh 50M</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label><i class="fas fa-tachometer-alt"></i> Power</label>
+                        <select id="powerFilter" class="glass-input">
+                            <option value="">All Power</option>
+                            <option value="0-200">Under 200 HP</option>
+                            <option value="200-300">200-300 HP</option>
+                            <option value="300-400">300-400 HP</option>
+                            <option value="400-999">Above 400 HP</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button class="clear-filters glass-btn" onclick="clearFilters()">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                        <button class="apply-filters glass-btn primary" onclick="applyFilters()">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Results -->
+        <section class="search-results-section">
+            <div class="results-header glass-panel">
+                <div class="results-info">
+                    <h2 id="resultsCount">Loading vehicles...</h2>
+                    <p>Find your dream Mercedes-Benz</p>
+                </div>
+                <div class="view-controls">
+                    <div class="view-toggle">
+                        <button class="view-btn active" onclick="setView('grid')" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" onclick="setView('list')" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    <div class="sort-options">
+                        <select id="sortBy" class="glass-input">
+                            <option value="name">Sort by Name</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="power">Power</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vehicles-container">
+                <div class="vehicles-grid" id="vehiclesGrid">
+                    <!-- Vehicles will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./search.js"></script>
+</body>
+</html>

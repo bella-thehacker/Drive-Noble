@@ -1,0 +1,301 @@
+/* ===========================
+   General & Glass Styling
+=========================== */
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  background: #0f0f0f;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(#1e1e1e, #000);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.floating-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  background: #ffffff;
+  animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 { width: 150px; height: 150px; top: 10%; left: 15%; }
+.shape-2 { width: 200px; height: 200px; top: 50%; left: 60%; }
+.shape-3 { width: 100px; height: 100px; top: 80%; left: 20%; }
+.shape-4 { width: 120px; height: 120px; top: 30%; left: 80%; }
+.shape-5 { width: 180px; height: 180px; top: 65%; left: 40%; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.glass-header, .glass-panel, .glass-input, .glass-btn {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* ===========================
+   Header Navigation
+=========================== */
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.head h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #fff;
+}
+
+.head h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+#logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.wrapper a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: 0.3s;
+}
+
+.wrapper a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+.search-hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  color: #c9aa7c;
+}
+
+.hero-content p{
+  color: #fff;
+}
+
+.quick-search {
+  margin-top: 20px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 15px;
+}
+
+.search-input-container i {
+  margin-right: 10px;
+  color: #ccc;
+}
+
+.search-input-container input {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* ===========================
+   Filters Section
+=========================== */
+.search-filters-section {
+  padding: 40px 20px;
+}
+
+.search-filters-section h3{
+  color: #c9aa7c;
+}
+
+.filters-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.filters-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.filter-group {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.glass-input {
+  padding: 10px;
+  border-radius: 12px;
+  color: black;
+  background: rgba(255, 255, 255, 0.07);
+  border: none;
+  font-size: 14px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.glass-btn {
+  padding: 10px 18px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.glass-btn.primary {
+  background: #ffffff22;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===========================
+   Results Section
+=========================== */
+.search-results-section {
+  padding: 40px 20px;
+}
+
+.results-header {
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-info h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #c9aa7c;
+}
+
+.results-info p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.view-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.view-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.view-btn.active {
+  color: #fff;
+}
+
+.vehicles-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.vehicle-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s;
+}
+
+.vehicle-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vehicle-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.vehicle-card h3 {
+  margin: 0;
+}
+
+.vehicle-card p {
+  margin: 4px 0;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.vehicle-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+  color: #aaa;
+}

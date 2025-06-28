@@ -1,0 +1,140 @@
+{
+  "mercedes": [
+    {
+      "id": "1",
+      "name": "Brabus Adventure XLP",
+      "price": "KSh 10,237,000",
+      "horsepower": "429 HP",
+      "description": "The Adventure XLP is an off-road beast with extended capabilities, enhanced power, and rugged styling, designed for extreme adventures.",
+      "poster": "https://www.brabus.com/_Resources/Persistent/6/8/4/4/684494b974ae8d1bc9eced3bb7fcdc6f2b57aad5/C4S_029%20%2849%29-992x662.jpg?bust=684494b9"
+    },
+    {
+      "id": "2",
+      "name": "AMG GT 63 S",
+      "price": "KSh 16,500,000",
+      "horsepower": "188–302 HP",
+      "description": "A compact luxury hatchback or sedan that combines sportiness with advanced technology. Perfect for city driving.",
+      "poster": "https://www.mercedes-amg.com/content/amg-pl/en/home/vehicles/gt/coupe/jcr:content/root/responsivegrid/freemediagallery_199/media1/image.media3.responsive_2b_first_image_1_1.1710753721915.jpeg"
+    },
+    {
+      "id": "3",
+      "name": "C 300",
+      "price": "KSh 9,500,500",
+      "horsepower": "255 HP",
+      "description": "A versatile sedan that combines performance, comfort, and cutting-edge tech.",
+      "poster": "https://hips.hearstapps.com/hmg-prod/images/2022-mercedes-benz-c300-4matic-sedan-112-1655383531.jpg?crop=0.717xw:0.802xh;0.151xw,0.198xh&resize=768:*"
+    },
+    {
+      "id": "4",
+      "name": "E 350",
+      "price": "KSh 12,500,000",
+      "horsepower": "225 HP",
+      "description": "A midsize luxury sedan offering elegance, comfort, and advanced safety features.",
+      "poster": "https://hips.hearstapps.com/hmg-prod/images/2020-mercedes-benz-e350-atiyeh-24b-1588702547.jpg?crop=0.764xw:0.572xh;0,0.351xh&resize=1200:*"
+    },
+    {
+      "id": "5",
+      "name": "GLE 350",
+      "price": "KSh 13,500,000",
+      "horsepower": "225 HP",
+      "description": "A luxury SUV with robust off-road capabilities, spacious interior, and refined tech.",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOsL0_CZwQnYR9rYYqY-qiBYlqlf3KciWsLA&s"
+    },
+    {
+      "id": "6",
+      "name": "S 580",
+      "price": "KSh 22,000,000",
+      "horsepower": "495 HP",
+      "description": "The flagship sedan of Mercedes-Benz—luxurious, powerful, and tech-loaded.",
+      "poster": "https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/mercedes-benz/s-class-wv223/exterior-highlights/mercedes-benz-s-class-wv223-exterior-vertical-gallery-01-1680x1260-08-2020.cbv20230517105504.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg"
+    },
+    {
+      "id": "7",
+      "name": "G 550",
+      "price": "KSh 24,000,000",
+      "horsepower": "416 HP",
+      "description": "The G-Wagon: rugged, powerful, and unmatched in off-road luxury.",
+      "poster": "https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/g-class/g-class-special-models-extraordinary/star-pattern/11-2022/images/mercedes-benz-g-class-special-models-star-pattern-6x6-image-2560x1440-11-2022.cbv20230517110856.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg"
+    },
+    {
+      "id": "8",
+      "name": "A 220",
+      "price": "KSh 6,000,000",
+      "horsepower": "188 HP",
+      "description": "A compact luxury sedan with premium features and smooth performance.",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRANruB6BoNUwzRJSMD6YXNlEWEos2gVRbqeA&s"
+    },
+    {
+      "id": "9",
+      "name": "A 35 AMG",
+      "price": "KSh 7,500,000",
+      "horsepower": "302 HP",
+      "description": "A turbocharged, sport-tuned performance variant of the A-Class.",
+      "poster": "https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/mercedes-benz/c-class-ws206/vertical-gallery/02-2021/images/mercedes-benz-c-class-s206-vertical-gallery-02-1680x1260-02-2021.cbv20230517105617.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg"
+    },
+    {
+      "id": "10",
+      "name": "CLA 45 AMG",
+      "price": "KSh 9,000,000",
+      "horsepower": "221 HP",
+      "description": "A high-performance CLA variant with aggressive styling and a premium interior.",
+      "poster": "https://img.autotrader.co.za/30223582/Crop640x480"
+    },
+    {
+      "id": "11",
+      "name": "E 53 AMG",
+      "price": "KSh 14,500,000",
+      "horsepower": "429 HP",
+      "description": "Sporty luxury and thrilling performance—Mercedes E 53 AMG has it all.",
+      "poster": "https://www.mercedes-amg.com/content/amg-pl/en/home/vehicles/e-class/sedan/jcr:content/root/responsivegrid/threeimagegallery/image1.media3.responsive_8col_4_3.1709905099517.jpeg"
+    },
+    {
+      "id": "12",
+      "name": "S 500",
+      "price": "KSh 20,000,000",
+      "horsepower": "429 HP",
+      "description": "Flagship-level comfort and technology with exhilarating performance.",
+      "poster": "https://hips.hearstapps.com/hmg-prod/images/2022-mercedes-benz-s500-4matic-109-1642184016.jpg?crop=0.591xw:0.665xh;0.137xw,0.274xh&resize=768:*"
+    },
+    {
+      "id": "13",
+      "name": "Brabus Ultimate",
+      "price": "KSh 90,500,000",
+      "horsepower": "381 HP",
+      "description": "S 63 variant tuned by Brabus—unmatched luxury and beastly power.",
+      "poster": "https://www.brabus.com/_Resources/Persistent/6/4/6/e/646e5ec426ac8cac35250a67c5fcedff14102723/BRABUS_Rocket_1000_M-AMG%20GT%2063_Mars%20%2814%20von%2023%29-1170x780.jpg"
+    },
+    {
+      "id": "14",
+      "name": "B 180",
+      "price": "KSh 2,800,000",
+      "horsepower": "122 HP",
+      "description": "Compact MPV great for families. Spacious and safe.",
+      "poster": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_index_thumb_320/v1/editorial/dp/images/uploads/mercedes-benz-b-class-b200-red-w.jpg"
+    },
+    {
+      "id": "15",
+      "name": "GLA 180",
+      "price": "KSh 4,000,000",
+      "horsepower": "122 HP",
+      "description": "Compact SUV with great agility and practicality for city driving.",
+      "poster": "https://images.topgear.com.ph/topgear/images/2018/02/15/MERC_1200.jpg"
+    },
+    {
+      "id": "16",
+      "name": "A 160",
+      "price": "KSh 2,200,000",
+      "horsepower": "102 HP",
+      "description": "Efficient, stylish, and perfect for urban driving.",
+      "poster": "https://media.gettyimages.com/id/542041756/photo/2003-mercedes-benz-a160.jpg?s=2048x2048&w=gi&k=20&c=HXqf6KOBbpvkRUqn-lXaoDUcLBzFXEHWmH48aF2NETI="
+    },
+    {
+      "id": "17",
+      "name": "S 400 Hybrid",
+      "price": "KSh 4,000,000",
+      "horsepower": "306 HP",
+      "description": "Luxury hybrid sedan that blends performance with eco-efficiency.",
+      "poster": "https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/mercedes-benz/electric-models/00-mercedes-benz-eq-eqa-2021-h243-2560x1440.cbv20231123151944.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg"
+    }
+  ]
+}
