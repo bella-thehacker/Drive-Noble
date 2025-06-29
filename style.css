@@ -201,12 +201,24 @@ main.body {
   position: absolute;
   top: -35%;
   left: 5%;
-  color: #000;
+  color: #c9aa7c;
   letter-spacing: 3px;
   font-size: 300%;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
   font-style: normal;
+  
+
+
+  text-shadow:
+      0 0 7px #000,
+      0 0 10px #000,
+      0 0 21px #fff,
+      0 0 42px #c9aa7c,
+      0 0 82px #c9aa7c,
+      0 0 92px #c9aa7c,
+      0 0 102px #c9aa7c,
+      0 0 151px #c9aa7c;
 
 }
 
@@ -247,6 +259,7 @@ main.body {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: normal;
+  color: #c9aa7c;
 }
 
 .summary-1{
@@ -258,6 +271,7 @@ main.body {
   margin-top: 5%;
   font-family: "Libre Baskerville", serif;
   margin-bottom: 1%;
+  color: #c9aa7c;
 }
 
 .rest-1 img{
@@ -286,6 +300,7 @@ height: 40rem;
   margin-bottom: 2%;
   margin-top: 40%;
   font-family: "Libre Baskerville", serif;
+  color: #c9aa7c;
 }
 
 .words p{
