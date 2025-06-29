@@ -1,10 +1,7 @@
-// This is a cleaned-up and improved version of your JavaScript
-// Fixes:
-// - Corrected the class name from DriveNobleApp to DriveNoble
-// - Removed duplicate DOMContentLoaded
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  window.app = new DriveNoble(); // Correct class name
+  window.app = new DriveNoble(); 
 });
 
 class DriveNoble {
@@ -14,7 +11,7 @@ class DriveNoble {
     this.isLoading = false;
     this.currentView = "home";
 
-    this.defaultData = []; // fallback if fetch fails
+    this.defaultData = []; 
     this.init();
   }
 
@@ -35,7 +32,7 @@ class DriveNoble {
       hamburger: document.querySelector(".hamburger"),
       mobileNav: document.querySelector(".mobile-nav"),
       mainContent: document.querySelector("main"),
-      carsGrid: document.querySelector(".cars"), // corrected to match your HTML
+      carsGrid: document.querySelector(".cars"), 
       searchButton: document.querySelector(".searchButton"),
       loginButton: document.querySelector(".logButton"),
       carsContainer: document.querySelector(".cars"),
@@ -111,6 +108,32 @@ class DriveNoble {
     }
   }
 
+fadeInImagesOnScroll() {
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible")
+          observerInstance.unobserve(entry.target); 
+        }
+      });
+    },
+    {
+      threshold: 0.1 
+    }
+  );
+
+  fadeElements.forEach((el) => {
+    observer.observe(el);
+  });
+}
+
+
+
+
+  
   async loadBestSellers() {
     const data = await this.fetchData();
     const uniquePopular = [];
@@ -131,24 +154,27 @@ class DriveNoble {
     this.renderCars(uniquePopular);
   }
 
-  renderCars(cars) {
-    if (!this.elements.carsGrid) return;
+ renderCars(cars) {
+  if (!this.elements.carsGrid) return;
 
-    this.elements.carsGrid.innerHTML = "";
+  this.elements.carsGrid.innerHTML = "";
 
-    if (!cars.length) {
-      this.elements.carsGrid.innerHTML =
-        '<p style="text-align: center; color: #666;">No cars available at the moment.</p>';
-      return;
-    }
-
-    cars.forEach((car, index) => {
-      const carCard = this.createCarCard(car);
-      carCard.style.animationDelay = `${index * 0.1}s`;
-      carCard.classList.add("fade-in");
-      this.elements.carsGrid.appendChild(carCard);
-    });
+  if (!cars.length) {
+    this.elements.carsGrid.innerHTML =
+      '<p style="text-align: center; color: #666;">No cars available at the moment.</p>';
+    return;
   }
+
+  cars.forEach((car, index) => {
+    const carCard = this.createCarCard(car);
+    carCard.classList.add("fade-in"); 
+    this.elements.carsGrid.appendChild(carCard);
+  });
+
+  this.fadeInImagesOnScroll(); 
+
+}
+
 
   createCarCard(car) {
     const card = document.createElement("div");

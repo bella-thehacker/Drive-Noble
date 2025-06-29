@@ -1,6 +1,4 @@
-/* ===========================
-   General & Glass Styling
-=========================== */
+
 body {
   margin: 0;
   font-family: 'Libre Baskerville', serif;
@@ -47,9 +45,7 @@ body {
   border-radius: 16px;
 }
 
-/* ===========================
-   Header Navigation
-=========================== */
+
 header nav {
   display: flex;
   align-items: center;
@@ -93,9 +89,7 @@ header nav {
   border-radius: 12px;
 }
 
-/* ===========================
-   Hero Section
-=========================== */
+
 .search-hero {
   padding: 60px 20px;
   text-align: center;
@@ -138,9 +132,7 @@ header nav {
   font-size: 16px;
 }
 
-/* ===========================
-   Filters Section
-=========================== */
+
 .search-filters-section {
   padding: 40px 20px;
 }
@@ -203,9 +195,7 @@ header nav {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* ===========================
-   Results Section
-=========================== */
+
 .search-results-section {
   padding: 40px 20px;
 }

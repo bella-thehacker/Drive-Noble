@@ -149,7 +149,7 @@ class VehiclesPage {
   filterCategory(category) {
     this.currentCategory = category
 
-    // Update active button
+  
     document.querySelectorAll(".category-btn").forEach((btn) => btn.classList.remove("active"))
     event.target.classList.add("active")
 
@@ -299,20 +299,20 @@ function requestQuote(vehicleName) {
   alert(`Quote request for ${vehicleName} has been noted. Our sales team will contact you within 24 hours.`)
 }
 
-// Initialize vehicles page
+
 let vehiclesPage
 document.addEventListener("DOMContentLoaded", () => {
   vehiclesPage = new VehiclesPage()
 })
 
-// Close modal on escape key
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeModal()
   }
 })
 
-// Close modal on outside click
+
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("vehicle-modal")) {
     closeModal()
