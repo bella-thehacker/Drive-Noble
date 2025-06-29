@@ -1,163 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drive Noble - Premium Mercedes Dealer</title>
-  <meta name="description" content="Drive Noble - Africa's leading Mercedes-Benz dealer offering luxury vehicles with unparalleled quality and sophistication." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Drive Noble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+      body {
+        font-family: 'Libre Baskerville', serif;
+        background: linear-gradient(135deg, #000, #333);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+      .login-container {
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="./style.css" />
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        color: #c9aa7c;
+      }
 
-</head>
-<body>
-  <!-- Loading Screen -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loading-content">
-      <h1>Drive Noble</h1>
-      <div class="loading-spinner"></div>
-    </div>
-  </div>
+      .login-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <div class="head">
-        <h1>Drive Noble</h1>
-        <h3>Grab Your Mercedes</h3>
-      </div>
-      <img
-        id="logo"
-        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTRlcmhndDZwMzE5azJkemhnaGVhdjJsZ2Rja2s4dXpqb3RhNWVwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dxgRwc9KNMxIXBwfjd/giphy.webp"
-        alt="Drive Noble Logo"
-      />
-      <div class="wrapper">
-        <button class="hamburger" aria-label="Toggle menu">
-  <span class="bar"></span>
- <span class="bar"></span>
- <span class="bar"></span>
-</button>
-      </div>
-    </nav>
-  </header>
+      .login-container input[type='email'],
+      .login-container input[type='password'] {
+        padding: 0.8rem;
+        border: none;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 1rem;
+      }
 
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav">
-    <a href="./index.html">Home</a>
-    <a href="./contact.html">Contact Us</a>
-    <a href="./vehicles.html">Vehicles</a>
-   <a href="./search.html">Search a Car </a>
-    <a href="./login.html">Log In</a>
-  </nav>
+      .login-container input::placeholder {
+        color: #bbb;
+      }
 
-  <!-- Main Content -->
-  <main class="body">
-    <!-- Hero Section -->
-    <section class="container">
-      <img
-        src="https://media1.tenor.com/m/vB85OJs5YiwAAAAd/mercedes.gif"
-        alt="Mercedes Animation"
-      />
-      <h2>Africa's Leading Dealer</h2>
-    </section>
+      .login-container button {
+        padding: 0.8rem;
+        background-color: #c9aa7c;
+        border: none;
+        border-radius: 8px;
+        color: #000;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-    <!-- About Section -->
-    <section class="summary">
-      <div class="rest">
-        <img
-          src="https://www.mercedes-benz.com/content/dam/brandhub/assets/innovation/milestones/75-years-brd/01-75-years-brd-teaser-tile-3840x2160.cbv20240605130746.jpg/_jcr_content/renditions/mq5-original-aspect.jpeg"
-          alt="Mercedes Heritage"
-        />
-        <h3>Redefining class</h3>
-      </div>
-      <p>
-        Exclusively offering Mercedes-Benz, we ensure unparalleled quality,
-        sophistication, and innovation.<br />
-        Discover the epitome of automotive perfection and drive your dream with us.<br />
-        Our commitment to luxury means providing you with the most advanced,
-        stylish, and reliable vehicles on the market.
-      </p>
-    </section>
+      .login-container button:hover {
+        background-color: #e2c68e;
+      }
 
-    <section class="summary-1">
-      <div class="rest-1">
-        <img
-          src="https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/because-it-is-mercedes-benz/love/08-2024/images/mercedes-benz-because-it-is-mercedes-benz-love-gallery-01-1080x1440-08-2024.jpg/_jcr_content/renditions/image-crop-default.jpeg/1743075506934.jpg?im=Resize=(1680);Crop,rect=(0,0,1680,2240)"
-          alt="Mercedes air"
-        />
-        <h3>See, hear, smell, touch: it’s a matter of taste.</h3>
-      </div>
-      <p>
-        A Mercedes‑Benz is not just a car. Crafted with precision and passion, it’s a multisensory experience, symbolising a staunch dedication to aesthetics, beauty and craftmanship.
-    </section>
+      .login-container .footer {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
 
+      .login-container .footer a {
+        color: #c9aa7c;
+        text-decoration: none;
+      }
 
-     <section class="summary-2">
-      <div class="rest-2">
-        <img
-          src="https://www.mercedes-benz.com/content/dam/brandhub/assets/innovation/milestones/defining-class/stage/09-2023/images/mercedes-benz-iaa-defining-class-stage-3840x2160-09-2023.jpg/_jcr_content/renditions/image-crop-default.jpeg/1730310710421.jpg?im=Resize=(1680);Crop,rect=(0,0,1680,945)"
-          alt="Mercedes air"
-        />
-    
-      </div>
-      <div class="words">
-          <h3>True class never goes out of style.</h3>
-      <p>
-       For Mercedes‑Benz, class goes beyond what we build on the assembly line. It is defined by our brand legacy and goes beyond technology, design, and comfort. Class is in everything we do.
-       </p>
-      </div>
-    </section>
-    <!-- Best Sellers Section -->
-    <section class="best">
-      <h1>Our Best Sellers!</h1>
-  <div id="carsGrid" class="cars"></div>
+      .login-container .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login to Drive Noble</h2>
+      <form id="loginForm">
+  <input type="email" placeholder="Email address" required />
+  <input type="password" placeholder="Password" required />
+  <button type="submit">Log In</button>
+</form>
 
 
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <h5>Follow us On</h5>
-    <div class="bottom">
-      <div class="socials">
-        <a href="https://www.instagram.com/mercedesbenz/?hl=en" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/MercedesBenz/" aria-label="Facebook">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.youtube.com/results?search_query=mercedes+benz" aria-label="YouTube">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="https://x.com/MercedesAMGF1" aria-label="Twitter">
-          <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="https://www.tiktok.com/@mercedesbenz?lang=en" aria-label="TikTok">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent actual form submission
+    // Simulate login logic (you can add validation/auth here)
+    window.location.href = 'home.html'; // Redirect to home page
+  });
+</script>
+      <div class="footer">
+        Don't have an account? <a href="./signup.html">Sign Up</a>
       </div>
     </div>
-    <div class="footerbottom">
-      <p>&copy; 2025; Designed by <span class="designer">CTRL Code Solutions</span></p>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="./script.js"></script>
-</body>
+  </body>
+  
 </html>

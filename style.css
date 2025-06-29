@@ -203,10 +203,11 @@ main.body {
   left: 5%;
   color: #000;
   letter-spacing: 3px;
-  font-size: 200%;
+  font-size: 300%;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
   font-style: normal;
+
 }
 
 .summary {

@@ -214,6 +214,10 @@ body {
   resize: vertical;
 }
 
+.glass-input option{
+  color: #0d0d0d;
+}
+
 .submit-btn {
   background: #c9aa7c;
   border: none;
